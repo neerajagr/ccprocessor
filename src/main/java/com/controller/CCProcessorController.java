@@ -27,7 +27,7 @@ import com.utils.LuhnCardCheck;
 public class CCProcessorController {
 	
 	@Autowired
-	CCProcessorService processorService;
+	private CCProcessorService processorService;
 	
 	@RequestMapping(path= "/add", method= RequestMethod.POST)
 	public CCGenericResponse addCard(@RequestBody CreditCardRequestModel request) {
@@ -46,7 +46,7 @@ public class CCProcessorController {
   		return ccGenericResponse;
 	}
 	
-	@RequestMapping(path= "/charge", method= RequestMethod.POST)
+	@RequestMapping(path= "/charge", method= RequestMethod.PUT)
 	public CCGenericResponse charge(@RequestBody CreditCardRequestModel request) {
 		CCGenericResponse ccGenericResponse = new CCGenericResponse();
 		if(CCProcessorUtils.validateChargeDetails(request)) {
@@ -60,7 +60,7 @@ public class CCProcessorController {
   		return ccGenericResponse;
 	}
 	
-	@RequestMapping(path= "/credit", method= RequestMethod.POST)
+	@RequestMapping(path= "/credit", method= RequestMethod.PUT)
 	public CCGenericResponse credit(@RequestBody CreditCardRequestModel request) {
 		CCGenericResponse ccGenericResponse = new CCGenericResponse();
 		if(CCProcessorUtils.validateChargeDetails(request)) {
