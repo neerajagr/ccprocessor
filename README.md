@@ -73,9 +73,11 @@ getAll
 
 This is a GET request to fetch all the cards available. This does not require any input and gives the JSON response containing all the cards.
 
-```
+Handling Error
+--------------
+
 Errors has been handled for all the endpoints in a way so that JSON response will be having an error JSON node with appropriate message field.
-```
+
 
 How to Use
 ----------
@@ -84,9 +86,9 @@ This application is designed to use the in memory H2 database.
 The application should now be up and running.
 
 To use these endpoints, POSTMAN tools can be used. The URLs will be as below if the application is hosted on the localhost:
-http://localhost:8080/add  --> request type POST
-http://localhost:8080/charge --> request type PUT
-http://localhost:8080/credit --> request type PUT
-http://localhost:8080/getAll --> request type GET
+- http://localhost:8080/add  --> request type POST
+- http://localhost:8080/charge --> request type PUT
+- http://localhost:8080/credit --> request type PUT
+- http://localhost:8080/getAll --> request type GET
 
 While making the POST/PUT request, JSON input is required in the same format as mentioned above. This will be given as the request body with type as JSON.
